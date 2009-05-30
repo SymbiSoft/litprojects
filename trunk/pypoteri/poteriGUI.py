@@ -4,11 +4,13 @@ from poteri.model import Poteri
 
 import appuifw
 import e32
-import audio
+import e32dbm
 
 enum={}
 enum["azione"]=[u"Standard",u"Minore",u"Movimento"]
 enum["tipo"]=[u"Incontro",u"Volonta'",u"Giornaliero",u"Utilita'"]
+
+attacco=e32dbm.open(u"c:\\Data\\python\\attacchi.db","c")
 
 def potere(id):
 	def x():
@@ -17,6 +19,8 @@ def potere(id):
 		for k,v in p.items():
 			if k in enum.keys():
 				v=enum[k][int(v)]
+			if k=="attacco" and str(v) in [a for a in attacco.iterkeys()]:
+				v=attacco[str(v)]
 			s+="%s: %s\n" %(k.title(), str(v))
 		round.set(unicode(s))
 	return x
@@ -41,13 +45,24 @@ def usa_potere():
 def edit_value(d, key):
 	def x():
 		p=Poteri.select(where=u"id="+unicode(d["id"])).next()
+		r=0
 		if key in enum.keys():
 			r=appuifw.selection_list(choices=enum[key], search_field=0)
+		elif key=="attacco":
+			round.set(unicode([a for a in attacco.iteritems()]))
+			ri=appuifw.selection_list(choices=[unicode(a) for a in attacco.itervalues()]+[u"aggiungi"], search_field=1)
+			if ri==len(attacco):
+				#round.set(unicode([a for a in attacco]))
+				i=len(attacco)
+				attacco[str(i)]=appuifw.query(u"Nuovo tipo di attacco","text")
+				r=i
+			else:
+				r=ri
 		else:	
 			r=appuifw.query(u"Nuovo valore","text")
 		if r:
 			p[key]=r
-		back()
+		#back()
 	return x
 
 def edit_potere(d):
