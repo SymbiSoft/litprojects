@@ -50,7 +50,7 @@ class MainClass(Plugin.Plugin):
     def start(self):
         '''start the plugin'''
         if os.path.exists(self.filePath) and self.delay.isdigit() :
-            f = open("/home/ilich/.config/emesene1.0/pluginsEmesene/ChangePM.txt")
+            f = open(self.filepath)
             self.msgs = f.readlines()
             f.close()
             self.lenght=len(self.msgs)
