@@ -45,24 +45,26 @@ def usa_potere():
 def edit_value(d, key):
 	def x():
 		p=Poteri.select(where=u"id="+unicode(d["id"])).next()
-		r=0
+		r=None
 		if key in enum.keys():
 			r=appuifw.selection_list(choices=enum[key], search_field=0)
 		elif key=="attacco":
-			round.set(unicode([a for a in attacco.iteritems()]))
-			ri=appuifw.selection_list(choices=[unicode(a) for a in attacco.itervalues()]+[u"aggiungi"], search_field=1)
+			l=[0 for i in range(len(attacco))]
+			for i in range(len(attacco)):
+				l[i]=attacco[str(i)]
+			ri=appuifw.selection_list(choices=[unicode(a) for a in l]+[u"aggiungi"], search_field=1)
 			if ri==len(attacco):
-				#round.set(unicode([a for a in attacco]))
 				i=len(attacco)
 				attacco[str(i)]=appuifw.query(u"Nuovo tipo di attacco","text")
 				r=i
 			else:
 				r=ri
 		else:	
-			r=appuifw.query(u"Nuovo valore","text")
-		if r:
+			r=appuifw.query(u"Valore %s"% (key),"text")
+		if r!=None:
+			appuifw.note(u"Valore modificato: %s <- %s"%(key,str(r)), "info")
 			p[key]=r
-		#back()
+		back()
 	return x
 
 def edit_potere(d):
@@ -71,9 +73,25 @@ def edit_potere(d):
 		edit_menu=[(u"Indietro",back)]+[(unicode(k.title()),edit_value(d,k)) for k in d.keys()]
 		appuifw.app.menu=edit_menu
 	return x	
-		
+
+def add():
+	nome=appuifw.query(u"Nome:", "text")
+	p=Poteri(nome=nome)
+	q=Poteri.select(where=u"id="+unicode(p.id)).next().dict()
+	for k in q.keys():
+		if k in ["usato","memorizzato"]:
+			p[k]=0
+		elif not k is "id":
+			edit_value(p,k)()
+
+def delete():
+	elenca()
+	r=appuifw.query(u"ID da cancellare","number")
+	Poteri.select(where=u"id="+unicode(r)).next().delete()
+	elenca()
+	
 def back():
-	round.set(u'press options')
+	elenca()
 	refresh()
 	
 def reset_poteri_giornalieri():
@@ -98,7 +116,10 @@ def refresh():
 					(unicode(enum["tipo"][2]),tuple([(unicode(p.nome),potere(p.id)) for p in Poteri.select(where=u"tipo=2")])),
 					(u"Tutti",tuple([(unicode(p.nome),potere(p.id)) for p in Poteri.select()])),
 					(u"Edit",tuple([(unicode(p.nome),edit_potere(p.dict())) for p in Poteri.select()])),
+					(u"Aggiungi",add),
+					(u"Cancella",delete),
 					(u"Refresh menu",refresh)]
+#
 # create the callback functions for the application menu and its submenus
 
 app_lock = e32.Ao_lock()
