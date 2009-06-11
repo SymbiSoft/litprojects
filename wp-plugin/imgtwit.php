@@ -2,7 +2,7 @@
 
 /*
 Plugin Name: Twitter image from shozu
-Plugin URI: http://code.google.com/p/litprojects/
+Plugin URI: http://code.google.com/p/litprojects/source/browse/trunk/wp-plugin/imgtwit.php
 Description: Insert images uploaded on shozu in posts posted from Twitter Tools
 Date: 2009, june, 10
 Author: Carlo Colombo
