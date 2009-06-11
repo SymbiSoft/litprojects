@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 #   This file is part of emesene.
 #
 #    Eval plugin is free software; you can redistribute it and/or modify
@@ -50,7 +51,7 @@ class MainClass(Plugin.Plugin):
     def start(self):
         '''start the plugin'''
         if os.path.exists(self.filePath) and self.delay.isdigit() :
-            f = open(self.filepath)
+            f = open(self.filePath)
             self.msgs = f.readlines()
             f.close()
             self.lenght=len(self.msgs)
