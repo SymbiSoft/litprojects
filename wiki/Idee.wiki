@@ -1,0 +1,6 @@
+===Twitter to script===
+Regex che parsano un feed twitter (privato) ed eseguono dei comandi
+  * Struttura come django (regex, funzione o comando shell)
+  * Integrato con cron (automaticamente)
+  * Funzione debug per testare il funzionamento in maniera interattiva
+
