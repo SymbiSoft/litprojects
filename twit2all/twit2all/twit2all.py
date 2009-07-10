@@ -8,6 +8,12 @@ class  twit2all(object):
   def __init__(self):
     self.last_id=None
     self.cron_line=None
+    self.time=None
+    self.path=os.path.join(os.getcwd(),os.path.dirname(sys.argv[0]))
+    self.filename=os.path.split(sys.argv[0])[1]
+    self.cron_file=os.path.join(self.path, ".%s.cron" % self.filename)
+    self.conf_file=os.path.join(self.path, ".%s.conf" % self.filename)
+
   def login_twitter(self, user=None, pwd=None):
     if "username" in self.__dict__:      
       self.api=twitter.Api(username=user, password=pwd)
@@ -38,11 +44,11 @@ class  twit2all(object):
               print function % m.groups()
             except TypeError as detail: raise Exception(detail, function, m.groups())
          
-  def load_last_id(self,file_name, last_id=None):
+  def load_last_id(self, last_id=None):
     '''load last id from a configuration file named <file_name> if exist, else create that file. 
   If file doesn't exist and <last_id> isn't None he file is created and filled with <last_id>'''
     try:
-      self.config=open(file_name,"r+")
+      self.config=open(self.conf_file,"r+")
     except IOError as detail:
       if str(detail).startswith("[Errno 2]"):
         try:
@@ -53,9 +59,10 @@ class  twit2all(object):
         else:
           self.last_id=last_id
     else:
-      self.last_id=str(long(self.config.readline()))
+      self.last_id=str(int(self.config.readline()))
   
-  def run(self):
+  def run(self, last_id=None):
+    t.load_last_id(last_id)
     if not "config" in self.__dict__: raise Exception("No config file found")
     self.status=self.api.GetUserTimeline(self.username, since_id=self.last_id)
     for regex,function in self.action:
@@ -77,20 +84,24 @@ class  twit2all(object):
       self.config.write(self.last_id)
       self.config.close()
   
-  def set_cron(self, minutes=60):
-    '''twitter will be checked every minutes'''
-    self.cron_line="*/%d * * * * " % minutes
+  def set_cron(self, m=60):
+    '''twitter will be checked every <m> minutes'''
+    self.cron_line="*/%d * * * * " % m
     self.cron_line+=os.getenv('USER')
-    self.cron_line+=" python %s/%s --run" % (os.getcwd(),sys.argv[0].split("/")[-1])
-
+    self.cron_line+=" python %s --run" % (os.path.join(self.path,self.filename))
+    
   def help(self):
     print "help"
   
   def cron(self):
-    print self.cron_line
-    fh = open(".%s.cron"%sys.argv[0],"w+")
-    fh.write(self.cron_line+"\n")
-    fh.close()
+    if self.time: 
+      self.cron(self.time)
+      fh = open(self.cron_file,"w+")
+      fh.write(self.cron_line+"\n")
+      fh.close()
+      commands.getoutput("crontab %s" % self.cron_file)
+    else:
+      raise Exception("No frequency time found")
   
   def start(self):
     if len(sys.argv)==1:
