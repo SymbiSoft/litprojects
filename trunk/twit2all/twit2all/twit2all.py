@@ -52,7 +52,7 @@ class  twit2all(object):
     except IOError as detail:
       if str(detail).startswith("[Errno 2]"):
         try:
-          self.config=open(file_name,"w+")
+          self.config=open(self.conf_file,"w+")
         except IOError as detail:
           if str(detail).startswith("[Errno 13]"):
             raise Exception("Permission denied to access %s"%file_name)
@@ -62,7 +62,7 @@ class  twit2all(object):
       self.last_id=str(int(self.config.readline()))
   
   def run(self, last_id=None):
-    t.load_last_id(last_id)
+    self.load_last_id(last_id)
     if not "config" in self.__dict__: raise Exception("No config file found")
     self.status=self.api.GetUserTimeline(self.username, since_id=self.last_id)
     for regex,function in self.action:
@@ -95,7 +95,7 @@ class  twit2all(object):
   
   def cron(self):
     if self.time: 
-      self.cron(self.time)
+      self.set_cron(self.time)
       fh = open(self.cron_file,"w+")
       fh.write(self.cron_line+"\n")
       fh.close()
