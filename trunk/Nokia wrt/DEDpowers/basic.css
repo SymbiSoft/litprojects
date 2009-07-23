@@ -51,3 +51,13 @@
 		float:right;
 		padding-right: 2px;
 	}
+	#poteri{
+		height:92%;
+	}
+	#slider{
+		height:8%;
+	}
+	img#left, img#right{
+			height: 25px;
+			width: 25px;
+	}
