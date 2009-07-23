@@ -3,10 +3,10 @@ STANDARD=1;
 GRATUITA=2;
 
 poteri={"Volonta":[
-          {"nome":"Lancia della Fede [1°]",
+          {"nome":"Lancia della Fede [1&ordm;]",
             "descrizione":"<b>Divino, Radioso, Strumento</b><br/>Distanza 5<br/>Una creatura<br/>SAG vs RIF<br/>1d8+SAG dr, un alleato +2 HIT vs bersaglio.",
             "azione":STANDARD},
-          {"nome":"Fiamma Sacra [1°]",
+          {"nome":"Fiamma Sacra [1&ordm;]",
             "descrizione":"<b>Divino, Radioso, Strumento</b><br/>Distanza 5<br/>Una creatura<br/>SAG vs RIF<br/>1d6+SAG dr, un alleato PFT= CAR+&frac12;LV o TS.",
             "azione":STANDARD}],
         "Incontro":[
@@ -22,17 +22,17 @@ poteri={"Volonta":[
           {"nome":"Parola Guaritrice [Chierico]",
             "descrizione":"",
             "azione":MINORE},
-          {"nome":"Bagliore Divino [1°]",
+          {"nome":"Bagliore Divino [1&ordm;]",
             "descrizione":"<b>Divino, Radioso, Strumento</b><br/>Prop Ravv 3<br/>Ogni nemico<br/>SAG vs RIF<br/>1d8+SAG dr, alleati nella Prop +2 HIT fino a fine turno successivo.",
             "azione":STANDARD},
-		  {"nome":"Comando [3°]",
+		  {"nome":"Comando [3&ordm;]",
             "descrizione":"<b>Charme, Divino, Strumento</b><br/>Distanza 10<br/>SAG vs VOL<br/>1d8+SAG dr<br/>Bersaglio frastornato per 1 turno, bersaglio in posizione prona o scorrere di 3q + CAR",
             "azione":STANDARD}],
         "Giornalieri":[
-		{"nome":"Faro di Speranza [1°]",
+		{"nome":"Faro di Speranza [1&ordm;]",
           "descrizione":"<b>Divino, Guarigione, Strumento</b><br/>Em Ravv 3<br/>Ogni nemico<br/>SAG vs VOL<br/>Colpito: indebolito fino a fine turno dopo<br/>Effetto: PG e alleati entro em recuperano 5PF+SAG; poteri guarigione del PG +5PF fino a fine incontro.",
           "azione":STANDARD},
-          {"nome":"Benedizione [2°utilit&agrave;]",
+          {"nome":"Benedizione [2&ordm;utilit&agrave;]",
             "descrizione":"<b>Divino</b><br/>Em Ravv 20<br/>PG e alleati<br/>+1HIT fino a fine incontro.",
             "azione":STANDARD}]
         }
