@@ -1,0 +1,35 @@
+MINORE=0;
+STANDARD=1;
+GRATUITA=2;
+
+poteri={"Volonta":[
+          {"nome":"Lancia della Fede",
+            "descrizione":"<b>Divino, Radioso, Strumento</b><br/>Distanza 5<br/>Una creatura<br/>SAG vs RIF<br/>1d8+SAG dr, un alleato +2 HIT vs bersaglio.",
+            "azione":STANDARD},
+          {"nome":"Fiamma Sacra",
+            "descrizione":"<b>Divino, Radioso, Strumento</b><br/>Distanza 5<br/>Una creatura<br/>SAG vs RIF<br/>1d6+SAG dr, un alleato PFT= CAR+&frac12;LV o TS.",
+            "azione":STANDARD}],
+        "Incontro":[
+          {"nome":"ID: Fortuna Divina",
+            "descrizione":"<b>Divino</b><br/>Il personaggio ottiene un bonus di +1 HIT o TS che abbia luogo entro la fine del turno successivo.",
+            "azione":GRATUITA},
+          {"nome":"ID: Scacciare non morti",
+            "descrizione":"<b>Divino, Radioso, Strumento</b><br/>Em Ravv 2<br/>Ogni creatura non morta<br/> SAG vs VOL<br/>1d10+SAG dr, spinta 3q+CAR, immobilizzato<br/>Mancato: &frac12; danni, no spinta no immobilizzato.",
+            "azione":STANDARD},
+          {"nome":"Parola Guaritrice",
+            "descrizione":"<b>Divino, Guarigione</b><br>Em Ravv 5<br/> PG o alleato Imp Curativo + 1d6+SAG.",
+            "azione":MINORE},
+          {"nome":"Parola Guaritrice",
+            "descrizione":"",
+            "azione":MINORE},
+          {"nome":"Bagliore Divino",
+            "descrizione":"<b>Divino, Radioso, Strumento</b><br/>Prop Ravv 3<br/>Ogni nemico<br/>SAG vs RIF<br/>1d8+SAG dr<br/>Alleati nella Prop +2 HIT fino a fine turno successivo.",
+            "azione":STANDARD}],
+        "Giornalieri":[
+        {"nome":"Faro di Speranza",
+          "descrizione":"<b>Divino, Guarigione, Strumento</b><br/>Em Ravv 3<br/>Ogni nemico<br/>SAG vs VOL<br/>Colpito: indebolito fino a fine turno dopo<br/>Effetto: PG e alleati entro em recuperano 5PF+SAG; poteri guarigione del PG +5PF fino a fine incontro.",
+          "azione":STANDARD},
+          {"nome":"Benedizione",
+            "descrizione":"<b>Divino</b><br/>Em Ravv 20<br/>PG e alleati<br/>+1HIT fino a fine incontro.",
+            "azione":STANDARD}]
+        }
