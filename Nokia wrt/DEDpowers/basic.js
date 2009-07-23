@@ -40,8 +40,23 @@ function init(){
 			d.toggle();
 		});
 	});
+	$("div.stato").each(function(i){
+		var s=$(this);
+		var d=$("div.sdescrizione",s);
+		$("div.stitolo",s).click(function(){
+			d.toggle();
+		});
+	});
 	$("div.pdescrizione").click(function(){
 		$(this).hide();
+	});
+	$("#left").click(function(){
+		$("#poteri").toggle();
+		$("#stati").toggle();
+	});
+	$("#right").click(function(){
+		$("#poteri").toggle();
+		$("#stati").toggle();
 	});
 
 	$("div.potere").each(function(i){

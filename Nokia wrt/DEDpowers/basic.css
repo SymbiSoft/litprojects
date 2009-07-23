@@ -11,6 +11,21 @@
 	font-family: Arial, Helvetica, sans-serif;
 	background-image: url(img/sfondo.jpg);
 	}
+	div#stati{
+		display: none;
+	}
+	.sdescrizione{
+		display:none;
+		background-color:#f7f5cc;
+		font-size: medium;
+	}
+	.stitolo{
+		background-color:#8000ff;
+		color:#ffffff;
+	}
+	.stato{
+		border:solid 1px black;
+	}
 	div.pdescrizione { 
 		display: none;
 		background-color: #ffff80;
