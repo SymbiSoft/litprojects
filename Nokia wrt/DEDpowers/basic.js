@@ -40,6 +40,9 @@ function init(){
 			d.toggle();
 		});
 	});
+	$("div.pdescrizione").click(function(){
+		$(this).hide();
+	});
 
 	$("div.potere").each(function(i){
 		var s=$(this);
