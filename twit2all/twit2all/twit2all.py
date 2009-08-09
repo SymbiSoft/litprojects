@@ -3,19 +3,21 @@ import twitter
 import re
 import commands
 import sys,os
+import time
 
 class  twit2all(object):
-  def __init__(self):
-    self.last_id=None
+  def __init__(self, username=None, time=60, last_id=None):
+    self.last_id=last_id
+    self.username=username
     self.cron_line=None
-    self.time=None
+    self.time=time
     self.path=os.path.join(os.getcwd(),os.path.dirname(sys.argv[0]))
     self.filename=os.path.split(sys.argv[0])[1]
     self.cron_file=os.path.join(self.path, ".%s.cron" % self.filename)
     self.conf_file=os.path.join(self.path, ".%s.conf" % self.filename)
 
   def login_twitter(self, user=None, pwd=None):
-    if "username" in self.__dict__:      
+    if self.username:
       self.api=twitter.Api(username=user, password=pwd)
       try:
         self.timeline=self.api.GetUserTimeline(self.username)
@@ -110,6 +112,7 @@ class  twit2all(object):
       if sys.argv[1]=='--help':
         self.help()
       elif sys.argv[1]=='--run':
+        commands.getoutput("echo '%s' >> /home/ilich/provat2a.txt" % time.asctime())
         self.run()
       elif sys.argv[1]=='--cron':
         self.cron()
