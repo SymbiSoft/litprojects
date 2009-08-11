@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 #/usr/bin/python
 import os,zipfile,os.path,shutil,sys
 
@@ -40,27 +41,28 @@ def makeAll(avi,zipped):
     
     return rename(avi,files[r])
     
-
+def main(argv):
+    if len(argv)>=3:
+          avi=argv[1]
+          zipped=argv[2]
+          srt=makeAll(avi,zipped)
+          if srt:
+              print avi,srt
+              if len(argv)==4:
+                  print os.popen(argv[3]+" "+avi)
+              if len(argv)==5 and argv[3]=="copy":
+                  shutil.copy(avi,argv[4])
+                  srtpath=os.path.split(avi)[0]+os.sep+os.path.split(srt)[1]
+                  shutil.copy(srtpath,argv[4])
+                  print "Copiato"
+          else:
+              print "Error: multiple file in zip."
+          
+    else:
+          print '''Use: python renSubs.py <full path avi file> <full path zip file>'''
 
 if __name__ == '__main__':
-    if len(sys.argv)>=3:
-        avi=sys.argv[1]
-        zipped=sys.argv[2]
-        srt=makeAll(avi,zipped)
-        if srt:
-            print avi,srt
-            if len(sys.argv)==4:
-                print os.popen(sys.argv[3]+" "+avi)
-	    if len(sys.argv)==5 and sys.argv[3]=="copy":
-		shutil.copy(avi,sys.argv[4])
-		srtpath=os.path.split(avi)[0]+os.sep+os.path.split(srt)[1]
-		shutil.copy(srtpath,sys.argv[4])
-		print "Copiato"
-        else:
-            print "Error: multiple file in zip."
-        
-    else:
-        print '''Use: python renSubs.py <full path avi file> <full path zip file>'''
+  main(sys.argv)
 
     
     
