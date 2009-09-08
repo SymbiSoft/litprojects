@@ -1,0 +1,12 @@
+Lavinya black theme 1.2. Just another WordPress theme from lavinya.net .
+1. Black design
+2. Valid xhtml and css
+3. 2 columns. Right Sidebar.
+4. Columns optimized(for seo)
+5. image optimized
+6. Compatible and tested on wordpress 2.6.3
+7. WordPress Title Tag optimized (for seo. And we recommend: All in One SEO Pack)
+8. Open source (GNU/GPL)
+And the others..
+
+By Murat Esgin http://www.lavinya.net/

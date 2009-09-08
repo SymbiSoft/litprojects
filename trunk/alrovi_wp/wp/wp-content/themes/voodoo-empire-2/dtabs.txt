@@ -1,0 +1,10 @@
+This theme is preconfigured to support the dtabs plugin located at
+http://wordpress.org/extend/plugins/dtabs/
+
+configure the plugin according to their instructions.  The tabs will be located
+directly under the header image.  (you will have to tweak the css a little if
+you want colours to match.)
+
+This can be seen at my site (http://www.rvoodoo.com)
+
+If you choose not to use this plugin it will not affect the theme at all
