@@ -1,0 +1,12 @@
+This Theme is preconfigured to allow you to include banner ads if you so desire, using the Ad-Minister plugin.
+
+The plugin is located at http://wordpress.org/extend/plugins/ad-minister/
+
+The theme is set-up ONLY for standard size banner ads (468x60)
+
+In ad-minister you MUST set up a position called 'banner'(no quotes), and ensure that all 
+images you want displayed are set in that position.
+
+If all steps above are followed the banner will be positioned above the header image in 
+the top bar toward the right side.  (can be seen at http://www.rvoodoo.com)
+

@@ -1,0 +1,30 @@
+If you wish to add text over the main banner image, follow these instructions:
+
+Open header.php and near the bottom find the following code:
+
+<div id="banner">
+		<div id="banner_title">				
+    <p>&nbsp;</p>
+    <p></p>
+  </div>
+			<div id="banner_text">
+				
+			</div>
+          </div>
+
+
+You can simply type in some changes as shown below:
+
+
+<div id="banner">
+		<div id="banner_title">				
+    <p>&nbsp;</p>
+    <p>A SECONDARY BLOG TITLE CAN GO HERE</p>
+  </div>
+			<div id="banner_text">
+				AND A SMALL DESCRIPTION OF YOUR SITE CAN GO HERE
+			</div>
+          </div>
+
+These options were left open for you to type whatever you want, and don't automatically add in your
+blogs name or tagline, since those are already included in the theme at the very top.
