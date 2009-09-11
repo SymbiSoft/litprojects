@@ -14,7 +14,7 @@ def find(r,directory):
 
 def make_pattern(serie,S,E,formato):
   s=r".*%s.*0?%s\D\D?0?%s\D.*%s" % (serie,S,E,formato)
-  return re.compile(s)
+  return re.compile(s,re.IGNORECASE)
 
 def main(argv):
   srtfile=avifile=""
