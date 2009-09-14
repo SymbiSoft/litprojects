@@ -5,9 +5,9 @@ Regex che parsano un feed twitter (privato) ed eseguono dei comandi
   * Funzione debug per testare il funzionamento in maniera interattiva
 
 ===Series Manager===
-* pyqt4
-* feed da twitter e tvrage per le serie
-* aggiungi torrent a ktorrent
-* scarica da itasa subs
-* rinomina sottotioli
-* copia su ipod
+  * pyqt4
+  * feed da twitter e tvrage per le serie
+  * aggiungi torrent a ktorrent
+  * scarica da itasa subs
+  * rinomina sottotioli
+  * copia su ipod
