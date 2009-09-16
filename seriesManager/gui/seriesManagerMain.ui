@@ -6,20 +6,24 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>435</width>
-    <height>59</height>
+    <width>374</width>
+    <height>71</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Scopritore</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>../../../../../immagini/rarr.png</normaloff>../../../../../immagini/rarr.png</iconset>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QLineEdit" name="serieName">
     <property name="geometry">
      <rect>
-      <x>0</x>
-      <y>0</y>
-      <width>241</width>
+      <x>10</x>
+      <y>10</y>
+      <width>181</width>
       <height>24</height>
      </rect>
     </property>
@@ -27,8 +31,8 @@
    <widget class="QSpinBox" name="serieN">
     <property name="geometry">
      <rect>
-      <x>250</x>
-      <y>0</y>
+      <x>190</x>
+      <y>10</y>
       <width>54</width>
       <height>25</height>
      </rect>
@@ -40,8 +44,8 @@
    <widget class="QSpinBox" name="episodioN">
     <property name="geometry">
      <rect>
-      <x>310</x>
-      <y>0</y>
+      <x>250</x>
+      <y>10</y>
       <width>54</width>
       <height>25</height>
      </rect>
@@ -53,9 +57,9 @@
    <widget class="QPushButton" name="pushButton">
     <property name="geometry">
      <rect>
-      <x>250</x>
-      <y>30</y>
-      <width>111</width>
+      <x>190</x>
+      <y>40</y>
+      <width>181</width>
       <height>24</height>
      </rect>
     </property>
@@ -63,25 +67,12 @@
      <string>GO</string>
     </property>
    </widget>
-   <widget class="QLineEdit" name="estensione">
-    <property name="geometry">
-     <rect>
-      <x>370</x>
-      <y>0</y>
-      <width>61</width>
-      <height>25</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>avi</string>
-    </property>
-   </widget>
    <widget class="QComboBox" name="azione">
     <property name="geometry">
      <rect>
-      <x>0</x>
-      <y>30</y>
-      <width>111</width>
+      <x>10</x>
+      <y>40</y>
+      <width>81</width>
       <height>24</height>
      </rect>
     </property>
@@ -99,9 +90,9 @@
    <widget class="QLineEdit" name="path">
     <property name="geometry">
      <rect>
-      <x>120</x>
-      <y>30</y>
-      <width>121</width>
+      <x>90</x>
+      <y>40</y>
+      <width>101</width>
       <height>25</height>
      </rect>
     </property>
@@ -109,17 +100,17 @@
      <string>/media/ILICH</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_2">
+   <widget class="QLineEdit" name="estensione">
     <property name="geometry">
      <rect>
-      <x>370</x>
-      <y>30</y>
+      <x>310</x>
+      <y>10</y>
       <width>61</width>
-      <height>24</height>
+      <height>25</height>
      </rect>
     </property>
     <property name="text">
-     <string>Close</string>
+     <string>avi</string>
     </property>
    </widget>
   </widget>
@@ -129,28 +120,12 @@
   <tabstop>serieN</tabstop>
   <tabstop>episodioN</tabstop>
   <tabstop>estensione</tabstop>
+  <tabstop>pushButton</tabstop>
   <tabstop>azione</tabstop>
   <tabstop>path</tabstop>
-  <tabstop>pushButton</tabstop>
  </tabstops>
  <resources/>
  <connections>
-  <connection>
-   <sender>pushButton_2</sender>
-   <signal>pressed()</signal>
-   <receiver>MainWindow</receiver>
-   <slot>close()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>407</x>
-     <y>46</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>359</x>
-     <y>-16</y>
-    </hint>
-   </hints>
-  </connection>
   <connection>
    <sender>azione</sender>
    <signal>currentIndexChanged(QString)</signal>
