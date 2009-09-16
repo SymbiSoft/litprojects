@@ -5,11 +5,16 @@ import sc
 
 class Scopritore(QtGui.QMainWindow):
     def __init__(self, parent=None):
-        QtGui.QWidget.__init__(self,parent)
-        self.ui = Ui_MainWindow()
-        self.ui.setupUi(self)
-        QtCore.QObject.connect(self.ui.azione, QtCore.SIGNAL("currentIndexChanged(QString)"), self.disablePath)
-        QtCore.QObject.connect(self.ui.pushButton, QtCore.SIGNAL("clicked()"), self.scopri)
+		QtGui.QWidget.__init__(self,parent)
+		self.ui = Ui_MainWindow()
+		self.ui.setupUi(self)
+		QtCore.QObject.connect(self.ui.azione, QtCore.SIGNAL("currentIndexChanged(QString)"), self.disablePath)
+		QtCore.QObject.connect(self.ui.pushButton, QtCore.SIGNAL("clicked()"), self.scopri)
+		screen = QtGui.QDesktopWidget().screenGeometry()
+		size =  self.geometry()
+		self.move((screen.width()-size.width())/2, (screen.height()-size.height())/2)
+
+		
         
     def disablePath(self,text):
         if text=='vlc':
