@@ -63,8 +63,14 @@
       <height>24</height>
      </rect>
     </property>
+    <property name="focusPolicy">
+     <enum>Qt::StrongFocus</enum>
+    </property>
     <property name="text">
      <string>GO</string>
+    </property>
+    <property name="default">
+     <bool>true</bool>
     </property>
    </widget>
    <widget class="QComboBox" name="azione">
@@ -125,22 +131,5 @@
   <tabstop>path</tabstop>
  </tabstops>
  <resources/>
- <connections>
-  <connection>
-   <sender>azione</sender>
-   <signal>currentIndexChanged(QString)</signal>
-   <receiver>path</receiver>
-   <slot>hide()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>66</x>
-     <y>45</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>205</x>
-     <y>40</y>
-    </hint>
-   </hints>
-  </connection>
- </connections>
+ <connections/>
 </ui>

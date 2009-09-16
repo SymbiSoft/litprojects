@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'python/litprojects/trunk/seriesManager/gui/seriesManagerMain.ui'
 #
-# Created: Wed Sep 16 20:53:59 2009
+# Created: Wed Sep 16 21:07:25 2009
 #      by: PyQt4 UI code generator 4.5.4
 #
 # WARNING! All changes made in this file will be lost!
@@ -31,6 +31,8 @@ class Ui_MainWindow(object):
         self.episodioN.setObjectName("episodioN")
         self.pushButton = QtGui.QPushButton(self.centralwidget)
         self.pushButton.setGeometry(QtCore.QRect(190, 40, 181, 24))
+        self.pushButton.setFocusPolicy(QtCore.Qt.StrongFocus)
+        self.pushButton.setDefault(True)
         self.pushButton.setObjectName("pushButton")
         self.azione = QtGui.QComboBox(self.centralwidget)
         self.azione.setGeometry(QtCore.QRect(10, 40, 81, 24))
@@ -46,7 +48,6 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
-        QtCore.QObject.connect(self.azione, QtCore.SIGNAL("currentIndexChanged(QString)"), self.path.hide)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
         MainWindow.setTabOrder(self.serieName, self.serieN)
         MainWindow.setTabOrder(self.serieN, self.episodioN)
