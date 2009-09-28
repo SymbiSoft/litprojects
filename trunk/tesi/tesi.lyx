@@ -50,16 +50,34 @@ Dominio
 LMS, Learning Management System
 \end_layout
 
+\begin_layout Quotation
+Un learning management system (LMS) è la piattaforma applicativa (o insieme
+ di programmi) che permette l'erogazione dei corsi in modalità e-learning.
+ Il learning management system presidia la distribuzione dei corsi on-line,
+ l'iscrizione degli studenti, il tracciamento delle attività on-line.
+ Gli LMS spesso operano in associazione con gli LCMS (learning content managemen
+t system) che gestiscono direttamente i contenuti, mentre all'LMS resta
+ la gestione degli utenti e l'analisi delle statistiche.
+\end_layout
+
+\begin_layout Quotation
+fonte http://it.wikipedia.org/wiki/Learning_management_system
+\end_layout
+
 \begin_layout Section
 SCORM e ADL
 \end_layout
 
 \begin_layout Subsection
-Storia dello SCORM
+Descrizione
+\end_layout
+
+\begin_layout Standard
+
 \end_layout
 
 \begin_layout Subsection
-Descrizione
+Storia dello SCORM
 \end_layout
 
 \begin_layout Subsection
