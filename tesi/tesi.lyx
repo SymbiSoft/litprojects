@@ -72,10 +72,6 @@ SCORM e ADL
 Descrizione
 \end_layout
 
-\begin_layout Standard
-
-\end_layout
-
 \begin_layout Subsection
 Storia dello SCORM
 \end_layout
@@ -85,47 +81,166 @@ Terminologia SCORM
 \end_layout
 
 \begin_layout Paragraph
+Albero delle attività (activity tree)
+\end_layout
+
+\begin_layout Standard
+Organizzazione gerarchica delle attività, le attività possono essere annidate
+ a qualunque livello.
+ E' generato a partire del file 
+\emph on
+imsmanifest.xml
+\emph default
+ presente all'interno dei pacchetti SCORM.
+ All'interno di un pacchetto possono essere definiti più alberi.
+ 
+\end_layout
+
+\begin_layout Paragraph
 Asset
 \end_layout
 
-\begin_layout Paragraph
-SCO
-\end_layout
-
-\begin_layout Paragraph
-Risorsa
+\begin_layout Standard
+Elemento base delle risorse distribuibili in un pacchetto SCORM, può essere
+ un qualunque formato renderizzabile da un browser (immagini, testo, video,
+ contenuti flash...).
+ Non comunica con l'LMS.
+ E' possibile descriverlo con metadati per poterlo indicizzare e ricercare
+ all'interno dei repository.
+ Un asset può a sua volta essere composto da più asset.
 \end_layout
 
 \begin_layout Paragraph
 Attività
 \end_layout
 
-\begin_layout Paragraph
-Albero delle attività
-\end_layout
-
-\begin_layout Paragraph
-Organizzazioni
+\begin_layout Standard
+Serie di istruzioni che il discente deve seguire in un ordine stabilito
+ da chi sviluppa il pacchetto SCORM.
+ Le attività possono essere annidate a qualunque livello, le attività foglie
+ devono avere una risorsa collegata.
+ Possono contere metadata per l'indicizzazione e la ricerca nei repository.
 \end_layout
 
 \begin_layout Paragraph
 Cluster
 \end_layout
 
+\begin_layout Standard
+Insieme di un'attività e dei suoi discendenti diretti (figli), una foglia
+ non è un cluster.
+\end_layout
+
 \begin_layout Paragraph
 Content Organization
+\end_layout
+
+\begin_layout Standard
+Rappresenta o mappa l'uso dei contenuti attraverso le attività.
+\end_layout
+
+\begin_layout Paragraph
+imsmanifest.xml
+\end_layout
+
+\begin_layout Standard
+File presento all'interno dei pacchetti che elenca le attività, gli alberi
+ delle attività, gli obiettivi legati alle attività, le risorse, le regole
+ di sequenziazione (sequencing) e di rollup.
+\end_layout
+
+\begin_layout Paragraph
+Organizzazioni (organization)
+\end_layout
+
+\begin_layout Standard
+Raggruppa più attività.
+ All'interno del file 
+\emph on
+imsmanifest.xml
+\emph default
+ identifica la radice dell'albero delle attività.
+ All'interno dei pacchetti è possibile trovare più organizzazioni da cui
+ verrano derivati gli alberi delle attività.
+\end_layout
+
+\begin_layout Paragraph
+Repository
+\end_layout
+
+\begin_layout Standard
+Database che contiene pacchetti SCORM, indicizzato con metadati contenuti
+ all'interno dei pacchetti.
+\end_layout
+
+\begin_layout Paragraph
+Risorsa
+\end_layout
+
+\begin_layout Standard
+Asset o SCO
 \end_layout
 
 \begin_layout Paragraph
 Rollup
 \end_layout
 
+\begin_layout Standard
+Analisi dell'avanzamento del corso a livello di cluster in dipendenza dell'avanz
+amento delle attività figlie.
+\end_layout
+
+\begin_layout Paragraph
+SCO (shareable content object)
+\end_layout
+
+\begin_layout Standard
+Uno o più asset annidati, utilizza RTE per comunicare con LMS, tracciato
+ utilizzando RTE data model, dovrebbe essere indipendente dal contesto di
+ insegnamento per permettere il riutilizzo.
+ Deve essere in grado di individuare le api del RTE fornite dal LMS, e poter
+ invocare almeno le funzioni 
+\emph on
+Initialize(
+\begin_inset Quotes eld
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+)
+\emph default
+ e 
+\emph on
+Terminate(
+\begin_inset Quotes eld
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+).
+\end_layout
+
 \begin_layout Paragraph
 Sequencing
 \end_layout
 
+\begin_layout Standard
+Selezione delle attività da erogare in funzione di vari criteri.
+\end_layout
+
 \begin_layout Paragraph
-Attempt
+Tentativo (attempt)
+\end_layout
+
+\begin_layout Standard
+Impegno necessario per portare a termine un'attività, inizia quando viene
+ identificata per l'erogazione e termina quando il sequencer sceglie la
+ prossima attività.
+ Il tentativo può essere sospeso e ripreso successivamente.
 \end_layout
 
 \begin_layout Subsection
