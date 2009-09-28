@@ -2,7 +2,7 @@
 \lyxformat 345
 \begin_document
 \begin_header
-\textclass article
+\textclass book
 \use_default_options true
 \language english
 \inputencoding auto
@@ -17,6 +17,7 @@
 
 \graphics default
 \paperfontsize default
+\spacing single
 \use_hyperref false
 \papersize default
 \use_geometry false
@@ -36,16 +37,113 @@
 \tracking_changes false
 \output_changes false
 \author "" 
+\author "" 
 \end_header
 
 \begin_body
 
-\begin_layout Section
+\begin_layout Chapter
 Dominio
 \end_layout
 
-\begin_layout Standard
+\begin_layout Section
+LMS, Learning Management System
+\end_layout
 
+\begin_layout Section
+SCORM e ADL
+\end_layout
+
+\begin_layout Subsection
+Storia dello SCORM
+\end_layout
+
+\begin_layout Subsection
+Descrizione
+\end_layout
+
+\begin_layout Subsection
+Terminologia SCORM
+\end_layout
+
+\begin_layout Paragraph
+Asset
+\end_layout
+
+\begin_layout Paragraph
+SCO
+\end_layout
+
+\begin_layout Paragraph
+Risorsa
+\end_layout
+
+\begin_layout Paragraph
+Attività
+\end_layout
+
+\begin_layout Paragraph
+Albero delle attività
+\end_layout
+
+\begin_layout Paragraph
+Organizzazioni
+\end_layout
+
+\begin_layout Paragraph
+Cluster
+\end_layout
+
+\begin_layout Paragraph
+Content Organization
+\end_layout
+
+\begin_layout Paragraph
+Rollup
+\end_layout
+
+\begin_layout Paragraph
+Sequencing
+\end_layout
+
+\begin_layout Paragraph
+Attempt
+\end_layout
+
+\begin_layout Subsection
+componenti di un LMS SCORM compliant
+\end_layout
+
+\begin_layout Chapter
+Analisi del modello di riferimento SCORM
+\end_layout
+
+\begin_layout Section
+CAM, content aggregation model
+\end_layout
+
+\begin_layout Section
+RTE, runtime environment
+\end_layout
+
+\begin_layout Section
+SN, Sequencing e Navigation
+\end_layout
+
+\begin_layout Chapter
+Analisi del Learning Management System fornito dall'ADL e di altri LMS oss
+\end_layout
+
+\begin_layout Chapter
+Implementazione del client
+\end_layout
+
+\begin_layout Chapter
+Implementazione del server
+\end_layout
+
+\begin_layout Chapter
+Considerazioni finali
 \end_layout
 
 \end_body
