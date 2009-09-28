@@ -1,9 +1,8 @@
 #!/usr/bin/env kross
 # -*- coding: utf-8 -*-
 
-
 import Kross
-#from twyt import twitter
+
 import logging
 logger = logging.getLogger('tor2twit')
 hdlr = logging.FileHandler('/home/ilich/.ktorrent/script.log')
@@ -11,19 +10,22 @@ formatter = logging.Formatter('%(asctime)s %(levelname)s %(message)s')
 hdlr.setFormatter(formatter)
 logger.addHandler(hdlr)
 logger.setLevel(logging.INFO)
+logger.info("tor2twit")
 
 import time
 import os
 import KTorrent
 import KTScriptingPlugin
 import commands
-logger.info("Start script2")
+
+import gui
+
+logger.info("Start script")
+
 class tor2twit:
-        def __init__(self):
+	def __init__(self):
 		self.user = "azurill"
 		self.pwd = "R4mirez!"
-		#self.t=twitter.Twitter()
-                #self.t.set_auth(self.user,self.pwd)
 		KTorrent.connect("torrentAdded(const QString &)",self.torrentAdded)
 		tors = KTorrent.torrents()
 		#logger.info("Log on twitter")
@@ -31,16 +33,6 @@ class tor2twit:
 		for t in tors:
 			self.torrentAdded(t)
 
-	#def twit(self,text):
-		#try:
-                        #self.t.status_update(text)
-		#except:
-                        #self.t.set_auth(self.user,self.pwd)
-                        #try:
-                                #self.t.status_update(text)
-                        #except:
-                                #KTorrent.log("Errore nell'invio twit: ", text)
-                                #logger.info("Errore nell'invio twit: "+ text)
 	def twit(self,text):
 		logger.info(commands.getoutput("twidge update \"%s\"" % text))
 		logger.info(text)
@@ -55,9 +47,7 @@ class tor2twit:
 		self.pwd = KTScriptingPlugin.readConfigEntry("tor2twit","password",self.pwd)
 
 	def configure():
-		forms = Kross.module("forms") 
-		dialog = forms.createDialog("My Cool Script Settings")
-		dialog.setButtons("Ok|Cancel")
+		pass
 
 	def torrentFinished(self,tor):
                 self.twit("The download of the torrent " + tor.name() + " has finished!")
