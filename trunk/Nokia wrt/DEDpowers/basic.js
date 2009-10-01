@@ -2,7 +2,7 @@
  * JavaScript file
  */
 function init(){
-	
+	$("#main").tabs();
 	
 	var c=0;
 	for (tipo in poteri) {
