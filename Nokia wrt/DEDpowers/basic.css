@@ -1,81 +1,99 @@
 /*
  * Add your Stylesheet contents here
  */
-
-
 /*
- 	p, h1 {
-  		padding: 0; margin: 0; }
-*/	body{
-	font-size:larger;
-	font-family: Arial, Helvetica, sans-serif;
-	background-image: url(img/sfondo.jpg);
-	}
-	div#stati{
-/* 		display: none; */
-	}
-	.sdescrizione{
-		display:none;
-		background-color:#f7f5cc;
-		font-size: medium;
-		color: black;
-	}
-	.stitolo{
-		background-color:#8000ff;
-		color:#ffffff;
-	}
-	.stato{
-		border:solid 1px black;
-	}
-	div.pdescrizione { 
-		display: none;
-		background-color: #ffff80;
-		border:solid 1px #000;
-		font-size: medium;
-		padding: 2px 2px 2px 2px;
-		color: black;
-		 }
-		 
-	#poteri div#Giornalieri .tipo {
-		background-color: black;
-		
-	}
-		#poteri div#Volonta .tipo {
-		background-color: #12583e;
-	}
-		#poteri div#Incontro .tipo {
-		background-color: #770003;
-	}
-	.tipo{
-		color: white;
-		padding-left: 1em;
-		padding-top: 5px;
-		padding-bottom: 2px;
-	}
-	
-	div.pheader{
-		background-color:#f7f5cc;
-		color: black;
-	}
-	div#Volonta .pnome{
-		padding-left:5px;
-	} 
-	input{
-		width:15px;
-		height:15px;
-	}
-	
-	.azione{
-		float:right;
-		padding-right: 2px;
-	}
-	#poteri{
-		height:92%;
-	}
-	#slider{
-		height:8%;
-	}
-	img#left, img#right{
-			height: 25px;
-			width: 25px;
-	}
+ p, h1 {
+ padding: 0; margin: 0; }
+ */
+body {
+    font-size: larger;
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: url(img/sfondo.jpg);
+}
+
+div#stati {
+    /* 		display: none; */
+}
+
+.sdescrizione {
+    display: none;
+    background-color: #f7f5cc;
+    font-size: medium;
+    color: black;
+}
+
+.stitolo {
+    background-color: #8000ff;
+    color: #ffffff;
+}
+
+.stato {
+    border: solid 1px black;
+}
+
+div.pdescrizione {
+    display: none;
+    background-color: #ffff80;
+    border: solid 1px #000;
+    font-size: medium;
+    padding: 2px 2px 2px 2px;
+    color: black;
+}
+
+#poteri div#Giornalieri .tipo {
+    background-color: black;
+}
+
+#poteri div#Volonta .tipo {
+    background-color: #12583e;
+}
+
+#poteri div#Incontro .tipo {
+    background-color: #770003;
+}
+
+.tipo {
+    color: white;
+    padding-left: 1em;
+    padding-top: 5px;
+    padding-bottom: 2px;
+}
+
+div.pheader {
+    background-color: #f7f5cc;
+    color: black;
+}
+
+div#Volonta .pnome {
+    padding-left: 5px;
+}
+
+input {
+    width: 15px;
+    height: 15px;
+}
+
+.azione {
+    float: right;
+    padding-right: 2px;
+}
+
+#poteri {
+    height: 92%;
+}
+
+div.otitolo {
+    background-color: #0066dd
+}
+
+div.odescrizione {
+	display: none;
+}
+
+  .stitolo {
+	font-size: larger;
+}
+
+.oggetto{
+	border: solid 1px white;
+}
