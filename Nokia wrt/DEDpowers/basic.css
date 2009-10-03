@@ -88,6 +88,8 @@ div.otitolo {
 
 div.odescrizione {
 	display: none;
+	padding: 2px 2px 2px 2px;
+	background-color: black;
 }
 
   .stitolo {

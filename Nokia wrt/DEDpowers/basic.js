@@ -5,10 +5,10 @@ function init(){
     $("#main").tabs();
 
 	azioni ={
-		MINORE: "&loz;",
-		STANDARD: "&diams;",
-		GRATUITA: "&hearts;",
-		REAZIONE: "&#8629;" 
+		0: "&loz;",
+		1: "&diams;",
+		2: "&hearts;",
+		3: "&#248;" 
 	}
 	
 	jQuery.each(oggetti,function(){
@@ -34,19 +34,7 @@ function init(){
         }
         for (var i in poteri[tipo]) {
             p = poteri[tipo][i];
-            var az = "<span class=\"azione\">";
-            switch (p.azione) {
-                case MINORE:
-                    az += "&loz;";
-                    break;
-                case STANDARD:
-                    az += "&diams;";
-                    break;
-                case GRATUITA:
-                    az += "&hearts;";
-                    break;
-            }
-            
+            var az = "<span class=\"azione\">"+azioni[p.azione];
             s = "<div id=potere" + c++ + " class=\"potere\"><div class=\"pheader\">" + t + "<span class=\"pnome\">" + p.nome + "</span>" + az + "</div>\n";
             s += "<div class=\"pdescrizione\">" + p.descrizione + "</div><div/>\n";
             $("div#" + tipo).append(s);
@@ -85,12 +73,7 @@ function init(){
             }
         });
         p = widget.preferenceForKey(id);
-        if (p) 
-            if (p == "t") 
-                d.attr('checked', true);
-            else 
-                d.attr('checked', false);
-        
+        d.attr('checked', p&& p=='t');
     });
 	
 	$('.iogg').each(function(){
@@ -105,11 +88,7 @@ function init(){
 		});
 		console.log(c.attr('id'))
 		var p = widget.preferenceForKey(c.attr('id'));
-        if (p) 
-            if (p == "t") 
-                c.attr('checked', true);
-            else 
-                c.attr('checked', false);
+		c.attr('checked', p&& p=='t');
 	})
     
     m = new MenuItem("Reset giornalieri", 0);
