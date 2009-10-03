@@ -10,16 +10,16 @@ poteri={"Volonta":[
             "descrizione":"<b>Divino, Radioso, Strumento</b><br/>Distanza 5<br/>Una creatura<br/>SAG vs RIF<br/>1d6+SAG dr, un alleato PFT= CAR+&frac12;LV o TS.",
             "azione":STANDARD}],
         "Incontro":[
-          {"nome":"ID: Fortuna Divina [Chierico]",
+          {"nome":"ID: Fortuna Divina [Ch]",
             "descrizione":"<b>Divino</b><br/>Il personaggio ottiene un bonus di +1 HIT o TS che abbia luogo entro la fine del turno successivo.",
             "azione":GRATUITA},
-          {"nome":"ID: Scacciare non morti [Chierico]",
+          {"nome":"ID: Scacciare non morti [Ch]",
             "descrizione":"<b>Divino, Radioso, Strumento</b><br/>Em Ravv 2<br/>Ogni creatura non morta<br/> SAG vs VOL<br/>1d10+SAG dr, spinta 3q+CAR, immobilizzato<br/>Mancato: &frac12; danni, no spinta no immobilizzato.",
             "azione":STANDARD},
-          {"nome":"Parola Guaritrice [Chierico]",
+          {"nome":"Parola Guaritrice [Ch]",
             "descrizione":"<b>Divino, Guarigione</b><br>Em Ravv 5<br/> PG o alleato Imp Curativo + 1d6+SAG.",
             "azione":MINORE},
-          {"nome":"Parola Guaritrice [Chierico]",
+          {"nome":"Parola Guaritrice [Ch]",
             "descrizione":"",
             "azione":MINORE},
           {"nome":"Bagliore Divino [1&ordm;]",
@@ -35,4 +35,17 @@ poteri={"Volonta":[
           {"nome":"Benedizione [2&ordm;utilit&agrave;]",
             "descrizione":"<b>Divino</b><br/>Em Ravv 20<br/>PG e alleati<br/>+1HIT fino a fine incontro.",
             "azione":STANDARD}]
-        }
+        };
+oggetti=[{'nome':'Simbolo di speranza +1',
+			'descrizione': '+1 HIT e DANNI, +1d6 critico<br/><b>Potere:</b> reazione immediata: PG o alleato colpiti da un effetto con TS, +5 TS contro effetto (non TS immediato)',
+			'azione': 'REAZIONE'},
+		{'nome':'Holy Healer\’s Weapon +1',
+			'descrizione': '+1 HIT e DANNI, +1d6 critico<br/><b>Propriet&agrave;:</b> +1 Parola Guaritrice<br><b>Potere:</b> Un <u>alleato</u> in 5q usa un impulso e recupera 5+SAG PF',
+			'azione': 'MINORE'},
+		];
+			
+/* template oggetto
+{'nome':'',
+'descrizione': '',
+'azione': ''}
+			*/
