@@ -1,6 +1,7 @@
 MINORE=0;
 STANDARD=1;
 GRATUITA=2;
+REAZIONE=3;
 
 poteri={"Volonta":[
           {"nome":"Lancia della Fede [1&ordm;]",
@@ -38,10 +39,10 @@ poteri={"Volonta":[
         };
 oggetti=[{'nome':'Simbolo di speranza +1',
 			'descrizione': '+1 HIT e DANNI, +1d6 critico<br/><b>Potere:</b> reazione immediata: PG o alleato colpiti da un effetto con TS, +5 TS contro effetto (non TS immediato)',
-			'azione': 'REAZIONE'},
-		{'nome':'Holy Healer\’s Weapon +1',
+			'azione': REAZIONE},
+		{'nome':'Holy Healer&#39;s Weapon +1',
 			'descrizione': '+1 HIT e DANNI, +1d6 critico<br/><b>Propriet&agrave;:</b> +1 Parola Guaritrice<br><b>Potere:</b> Un <u>alleato</u> in 5q usa un impulso e recupera 5+SAG PF',
-			'azione': 'MINORE'},
+			'azione': MINORE},
 		];
 			
 /* template oggetto
