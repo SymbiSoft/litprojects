@@ -4,8 +4,8 @@ GRATUITA=2;
 REAZIONE=3;
 
 poteri={"Volonta":[
-          {"nome":"Lancia della Fede [1&ordm;]",
-            "descrizione":"<b>Divino, Radioso, Strumento</b><br/>Distanza 5<br/>Una creatura<br/>SAG vs RIF<br/>1d8+SAG dr, un alleato +2 HIT vs bersaglio.",
+          {"nome":"Sigillo Astrale [1&ordm;]",
+            "descrizione":"<b>Divino, Guarigione, Strumento</b><br/>Distanza 5<br/>Una creatura<br/>SAG+2 vs RIF<br/>-2 alle difese del target fino a fine mio prossimo turno, primo <u>alleato</u> che colpisce viene curato di 2 + CAR + SAG",
             "azione":STANDARD},
           {"nome":"Fiamma Sacra [1&ordm;]",
             "descrizione":"<b>Divino, Radioso, Strumento</b><br/>Distanza 5<br/>Una creatura<br/>SAG vs RIF<br/>1d6+SAG dr, un alleato PFT= CAR+&frac12;LV o TS.",
@@ -24,7 +24,7 @@ poteri={"Volonta":[
             "descrizione":"",
             "azione":MINORE},
           {"nome":"Bagliore Divino [1&ordm;]",
-            "descrizione":"<b>Divino, Radioso, Strumento</b><br/>Prop Ravv 3<br/>Ogni nemico<br/>SAG vs RIF<br/>1d8+SAG dr, alleati nella Prop +2 HIT fino a fine turno successivo.",
+            "descrizione":"<b>Divino, Radioso, Strumento</b><br/>Prop Ravv 3<br/>Ogni nemico<br/>SAG vs RIF<br/>1d8+SAG dr<br/><b>Effetto:</b> alleati nella Prop +2 HIT fino a fine turno successivo.",
             "azione":STANDARD},
 		  {"nome":"Comando [3&ordm;]",
             "descrizione":"<b>Charme, Divino, Strumento</b><br/>Distanza 10<br/>SAG vs VOL<br/>1d8+SAG dr<br/>Bersaglio frastornato per 1 turno, bersaglio in posizione prona o scorrere di 3q + CAR",
@@ -49,4 +49,8 @@ oggetti=[{'nome':'Simbolo di speranza +1',
 {'nome':'',
 'descrizione': '',
 'azione': ''}
+
+{"nome":"Lancia della Fede [1&ordm;]",
+            "descrizione":"<b>Divino, Radioso, Strumento</b><br/>Distanza 5<br/>Una creatura<br/>SAG vs RIF<br/>1d8+SAG dr, un alleato +2 HIT vs bersaglio.",
+            "azione":STANDARD},
 			*/
