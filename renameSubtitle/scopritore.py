@@ -2,8 +2,8 @@
 # -*- coding: utf-8 -*-
 import re,os,sys,renSubs
 
-TOR="/media/disk/download/torrent"
-SUBS="/home/ilich/Download"
+TOR="/dati2/download/torrent"
+SUBS="/home/ilich/Scaricati"
 
 def find(r,directory):
   for f in os.listdir(directory):
