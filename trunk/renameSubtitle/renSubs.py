@@ -8,7 +8,10 @@ def rename(avi,srt):
     srtdir=os.path.dirname(srt)
     temp=os.path.join(srtdir,".".join(avifile.split(".")[:-1]+["srt"]))
     os.rename(srt,temp)
-    shutil.move(temp,avidir)
+    try:
+        shutil.move(temp,avidir)
+    except shutil.Error:
+        print "File sottotitolo già esistente, non sovrascritto"
     return temp
 
 def unzip(zipped):
