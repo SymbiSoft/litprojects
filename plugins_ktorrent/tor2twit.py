@@ -1,6 +1,8 @@
 #!/usr/bin/env kross
 # -*- coding: utf-8 -*-
 
+import KTorrent
+import KTScriptingPlugin
 import Kross
 
 import logging
@@ -14,11 +16,11 @@ logger.info("tor2twit")
 
 import time
 import os
-import KTorrent
-import KTScriptingPlugin
+#import KTorrent
+#import KTScriptingPlugin
 import commands
 
-import gui
+#import gui
 
 logger.info("Start script")
 
