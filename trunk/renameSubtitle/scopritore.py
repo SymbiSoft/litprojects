@@ -3,6 +3,7 @@
 import re,os,sys,renSubs
 
 TOR="/dati2/download/torrent"
+TOR2="/torrent"
 SUBS="/home/ilich/Scaricati"
 
 def find(r,directory):
@@ -18,12 +19,16 @@ def make_pattern(serie,S,E,formato):
 
 def main(argv):
   srtfile=avifile=""
+  t2=False
   if len(argv)>=5:
     serie,S,E,formato=argv[1:5]
     p=make_pattern(serie,S,E,formato)
     l=[i for i in find(p,TOR)]
     if len(l)==0:
-      print "File avi mancante"
+      l=[i for i in find(p,TOR2)]
+      t2=True
+    if len(l)==0:
+      print "avi mancante"
     elif len(l)==1:
       avifile=l[0]
     else:
@@ -42,9 +47,15 @@ def main(argv):
         print k," ",v
       srtfile=l[int(raw_input( "File multiplo, scegli: "))]
     if srtfile and avifile:
-      print TOR+"/"+avifile
+      if not t2:
+	print TOR+"/"+avifile
+      else:
+	print TOR+"/"+avifile
       print SUBS+"/"+srtfile
-      sysargv=["scopritore",TOR+"/"+avifile,SUBS+"/"+srtfile]+argv[5:]
+      if not t2:
+	sysargv=["scopritore",TOR+"/"+avifile,SUBS+"/"+srtfile]+argv[5:]
+      else:
+	sysargv=["scopritore",TOR2+"/"+avifile,SUBS+"/"+srtfile]+argv[5:]
       renSubs.main(sysargv)
   else:
     print "errore argomenti"
