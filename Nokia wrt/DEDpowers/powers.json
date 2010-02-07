@@ -36,9 +36,13 @@ poteri={'Volonta':[
 		{'nome':'Faro di Speranza [1&ordm;]',
           'descrizione':'<b>Divino, Guarigione, Strumento</b><br/>Em Ravv 3<br/>Ogni nemico<br/>SAG vs VOL<br/>Colpito: indebolito fino a fine turno dopo<br/>Effetto: PG e alleati entro em recuperano 5PF+SAG; poteri guarigione del PG +5PF fino a fine incontro.',
           'azione':STANDARD},
-            {'nome':'Suolo Consacrato [5&ordm;]',
-            'descrizione':'<b>Divino, Guarigione, Radioso, Zona</b><br/>Em Ravv 1<br/>Zona di terreno consacrato fino a fine turno successivo.<br/>Azione di movimento per muovere la zona di 3q.<br/>I nemici che iniziano all\'interno della zona: 1d6+CAR dr<br/>Il personaggio ed alleati <u>sanguinanti</u> che iniziano all\'interno della zona: 1+CAR+SAG PF<br/><b>Mantenere minore</b>',
-            'azione':STANDARD}]
+            {'nome':'Iron to Glass [5&ordm;]',
+            'descrizione':'<b>Divino, Strumento</b><br/>Distanza 10<br/>SAG vs RIF<br/>Fino alla fine incontro target -4 danni meele. Ogni volta che colpisce malus peggiora di 2 fino a -10<br/><b>Mancato:</b> -2 ai danni, se colpisce -1 fino a -5',
+            'azione':STANDARD},
+            {'nome': 'Spirit of Healing [6&ordm;utilit&agrave;]',
+            'descrizione':'<b>Conjuration, Divino, Guarigione</b><br/>Distanza 10<br/>Appare uno spirito in un quadretto nel range, dura fino alla fine del prossimo turno.<br/>Un alleato nel quadretto dello spirito o adiacente colpisce un nemico, alleato recupera 2*SAG + SAG.<br/>Azione di movimento: spirito si muove di 4q<br/>Mantenere minore',
+            'azione':MINORE        
+            }]
         };
 oggetti=[{'nome':'Simbolo di speranza +1',
 			'descrizione': '+1 HIT e DANNI, +1d6 critico<br/><b>Potere:</b> reazione immediata: PG o alleato colpiti da un effetto con TS, +5 TS contro effetto (non TS immediato)',
@@ -60,4 +64,8 @@ oggetti=[{'nome':'Simbolo di speranza +1',
 {"nome":"Lancia della Fede [1&ordm;]",
             "descrizione":"<b>Divino, Radioso, Strumento</b><br/>Distanza 5<br/>Una creatura<br/>SAG vs RIF<br/>1d8+SAG dr, un alleato +2 HIT vs bersaglio.",
             "azione":STANDARD},
+            
+ {'nome':'Suolo Consacrato [5&ordm;]',
+            'descrizione':'<b>Divino, Guarigione, Radioso, Zona</b><br/>Em Ravv 1<br/>Zona di terreno consacrato fino a fine turno successivo.<br/>Azione di movimento per muovere la zona di 3q.<br/>I nemici che iniziano all\'interno della zona: 1d6+CAR dr<br/>Il personaggio ed alleati <u>sanguinanti</u> che iniziano all\'interno della zona: 1+CAR+SAG PF<br/><b>Mantenere minore</b>',
+            'azione':STANDARD}            
 			*/
