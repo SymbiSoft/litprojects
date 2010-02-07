@@ -87,15 +87,21 @@ div.otitolo {
 }
 
 div.odescrizione {
-	display: none;
-	padding: 2px 2px 2px 2px;
-	background-color: black;
+    display: none;
+    padding: 2px 2px 2px 2px;
+    background-color: black;
 }
 
-  .stitolo {
-	font-size: larger;
+.stitolo {
+    font-size: larger;
 }
 
-.oggetto{
-	border: solid 1px white;
+.oggetto {
+    border: solid 1px white;
+}
+
+#statistiche {
+    background-color: #f7f5cc;
+    font-size: medium;
+    color: black;
 }

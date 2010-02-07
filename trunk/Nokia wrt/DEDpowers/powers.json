@@ -40,7 +40,7 @@ poteri={'Volonta':[
             'descrizione':'<b>Divino, Strumento</b><br/>Distanza 10<br/>SAG vs RIF<br/>Fino alla fine incontro target -4 danni meele. Ogni volta che colpisce malus peggiora di 2 fino a -10<br/><b>Mancato:</b> -2 ai danni, se colpisce -1 fino a -5',
             'azione':STANDARD},
             {'nome': 'Spirit of Healing [6&ordm;utilit&agrave;]',
-            'descrizione':'<b>Conjuration, Divino, Guarigione</b><br/>Distanza 10<br/>Appare uno spirito in un quadretto nel range, dura fino alla fine del prossimo turno.<br/>Un alleato nel quadretto dello spirito o adiacente colpisce un nemico, alleato recupera 2*SAG + SAG.<br/>Azione di movimento: spirito si muove di 4q<br/>Mantenere minore',
+            'descrizione':'<b>Conjuration, Divino, Guarigione</b><br/>Distanza 10<br/>Appare uno spirito in un quadretto nel range, dura fino alla fine del prossimo turno.<br/>Un alleato nel quadretto dello spirito o adiacente colpisce un nemico, alleato recupera 2*SAG + SAG.<br/>Azione di movimento: spirito si muove di 4q<br/><em>Mantenere minore</em>',
             'azione':MINORE        
             }]
         };
