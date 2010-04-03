@@ -1,0 +1,17 @@
+moduleName="piaggio"
+
+dialogs=["t-my-motoguzzi":[
+            "tabDesc":[
+                "pageTitle":[
+                    "controlType":"edit",
+                    "row":1
+                ],
+                "title":[
+                    controlType:"edit",
+                    row:1
+                ],
+                "abstract":[
+                    controlType: mgEditor
+                ]
+                
+            ]]]

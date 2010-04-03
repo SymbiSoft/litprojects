@@ -1,0 +1,48 @@
+moduleName="piaggio"
+basePath="/module"
+
+createNode={path, name ->
+    println "Created: "+path+"/"+name
+    return path+"/"+name
+}
+
+nodeData = {path,name,value ->
+    println "Nodedata: "+path+"/"+name+"="+value
+    return value
+}
+
+dialogs=["t-my-motoguzzi":[
+            "tabDesc":[
+                "pageTitle":[
+                    "controlType":"edit",
+                    "row":1
+                ],
+                "title":[
+                    controlType:"edit",
+                    row:1
+                ],
+                "abstract":[
+                    controlType: "mgEditor"
+                ]
+                
+            ]]]
+
+messages=[]
+dialogs.each{dlgName,dialog ->
+    messages.add("#Dialog $dlgName")
+    dlgNode = createNode(basePath+"/"+moduleName+"/try",dlgName)
+    messages.add(nodeData(dlgNode,"label","$moduleName.$dlgName"+".label"))
+    dialog.each{tabName,tab ->
+        tabNode = createNode(dlgNode,tabName)
+        messages.add(nodeData(tabNode,"label","$moduleName.$dlgName.$tabName"+".label"))
+        tab.each{ctrlName, ctrl->
+            ctrlNode = createNode(tabNode,ctrlName)         
+            ctrl.each{property,value ->
+                nodeData(ctrlNode,property,value)
+                messages.add(nodeData(ctrlNode,"label","$moduleName.$dlgName.$tabName.$ctrlName"+".label"))
+                messages.add(nodeData(ctrlNode,"description","$moduleName.$dlgName.$tabName.$ctrlName"+".description"))
+            }
+        }
+    }
+}
+messages.each{s -> println s}
