@@ -35,12 +35,12 @@ def makeAll(avi,zipped):
     #print files
     r=-5
     while (r<0 or r>=len(files)):
-	if len(files)>1:
-		for i in range(len(files)):
-			print "%d: %s" % (i,files[i])
-		r=int(raw_input("Scegli: "))
-	else:
-		r=0
+		if len(files)>1:
+			for i in range(len(files)):
+				print "%d: %s" % (i,files[i])
+			r=int(raw_input("Scegli: "))	
+		else:
+			r=0
     
     return rename(avi,files[r])
     
