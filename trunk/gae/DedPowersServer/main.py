@@ -14,7 +14,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-import os,cgi
+import os,cgi,sys
+import pdb
 from google.appengine.ext import webapp
 from google.appengine.ext.webapp import util
 
@@ -28,26 +29,36 @@ class MainHandler(webapp.RequestHandler):
         template_values={"characters":characters}
         path = os.path.join(os.path.dirname(__file__), 'template/index.html')
         self.response.out.write(template.render(path, template_values))
-        
-class AddCharacter(webapp.RequestHandler):
-	def post(self):
-		name=cgi.escape(self.request.get('name'))
-		level=long(cgi.escape(self.request.get('level')))
-		character_class=cgi.escape(self.request.get('class'))
-		id=cgi.escape(self.request.get('name')).lower().replace(" ","")
-		chara = Character(name=name, level=level,character_class=character_class,id=id)
-		chara.put()
-		self.redirect('/')
-		
+
+    def post(self):
+        name=cgi.escape(self.request.get('name'))
+        level=long(cgi.escape(self.request.get('level')))
+        character_class=cgi.escape(self.request.get('class'))
+        id=cgi.escape(self.request.get('name')).lower().replace(" ","")
+        chara = Character(parent=None,key_name=id,id=id,name=name, level=level,character_class=character_class)
+        chara.put()
+        self.redirect('/')
+
 class DeleteCharacter(webapp.RequestHandler):
-	def get(self,chara):
-		self.response.out.write("ciao %s" % chara)
+    def get(self,id):
+        chara=Character.all().filter("id =",id)
+        if not chara and chara=='all':
+            chara=Character.all()
+        for c in chara:
+            c.delete()
+        self.redirect('/?chara='+id)
+
+class ViewCharacter(webapp.RequestHandler):
+    def get(self,chara):
+        chara=Character.all().filter("id =",chara).fetch(1)[0]
+        path = os.path.join(os.path.dirname(__file__), 'template/view-character.html')
+        self.response.out.write(template.render(path, {"chara":chara}))
 
 def main():
     application = webapp.WSGIApplication([('/', MainHandler),
-		('/add',AddCharacter),
-		(r'/delete/(.*)',DeleteCharacter)],
-                                         debug=True)
+        (r'/delete/(.*)',DeleteCharacter),
+        (r'/chara/(.*)',ViewCharacter)],
+        debug=True)
     util.run_wsgi_app(application)
 
 

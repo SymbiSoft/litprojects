@@ -11,7 +11,7 @@ class PowerType(db.Model):
 class Character(db.Model):
     name = db.StringProperty(required=True)
     character_class = db.StringProperty()
-    id = db.StringProperty(required=True)
+    id = db.StringProperty(required=False)
     level = db.IntegerProperty()
     user = db.UserProperty()
     

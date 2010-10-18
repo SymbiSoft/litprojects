@@ -1,12 +1,15 @@
 <html>
 <head><title>Personaggi</title></head>
   <body>
-  <ul>
-  {% for chara in characters%}
-  <li><a href="/{{chara.id}}" title="{{chara.name}}">{{chara.name}}</a> {{chara.character_class }} Lvl. {{chara.level}} <a href="delete/{{chara.id}}">Delete</a></li>
-  {% endfor %}
-  </ul>
-    <form action="/add" method="post">
+  <a href="/delete/all">Delete all</a>
+  <div id="character-list">
+    <ul>
+        {% for chara in characters%}
+        <li><a href="/chara/{{chara.id}}" title="{{chara.name}}">{{chara.name}}</a> {{chara.character_class }} Lvl. {{chara.level}} <a href="delete/{{chara.id}}">Delete</a></li>
+        {% endfor %}
+    </ul>
+  </div>
+    <form action="/" method="post">
       <div>Name<input type="edit" name="name"></div>
       <div>Class<input type="edit" name="class"></div>
       <div>Level<input type="edit" name="level"></div>
