@@ -1,0 +1,21 @@
+<html>
+<head><title>{{chara.name}}</title></head>
+  <body>
+  <div class="page-list">
+    <ul>
+    {% for page in pages%}
+        <li><a href="/chara/{{chara.id}}/{{page.key}}" title="{{chara.name}}">{{chara.name}}</a> {{chara.character_class }} Lvl. {{chara.level}} <a href="delete/{{chara.id}}">Delete</a></li>
+    {% endfor %}
+    </ul>
+  </div>
+  
+  <a href="/delete/{{chara.id}}">Delete character</a>
+  
+    <form action="/edit" method="post">
+      <div>Name<input type="edit" name="name" value="{{chara.name}}"></div>
+      <div>Class<input type="edit" name="class" value="{{chara.character_class}}"></div>
+      <div>Level<input type="edit" name="level" value="{{chara.level}}"></div>
+      <div><input type="submit" value="Edit character"></div>
+    </form>
+  </body>
+</html>
