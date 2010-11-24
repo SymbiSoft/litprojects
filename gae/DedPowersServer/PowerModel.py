@@ -18,6 +18,7 @@ class Character(db.Model):
 class Page(db.Model):
     order = db.IntegerProperty()
     name = db.StringProperty(required=True)
+    title = db.StringProperty(required=True)
     title_text_color=db.StringProperty(default="black")
     title_background_color=db.StringProperty(default="white")
     text_color=db.StringProperty(default="black")

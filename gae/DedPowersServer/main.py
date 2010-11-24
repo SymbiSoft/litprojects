@@ -50,14 +50,31 @@ class DeleteCharacter(webapp.RequestHandler):
 
 class ViewCharacter(webapp.RequestHandler):
     def get(self,chara):
-        chara=Character.all().filter("id =",chara).fetch(1)[0]
+        chara=DB_utils.get_chara(chara)
         path = os.path.join(os.path.dirname(__file__), 'template/view-character.html')
         self.response.out.write(template.render(path, {"chara":chara}))
+        
+    def post(self,chara):
+        chara=DB_utils.get_chara(chara)
+        name=cgi.escape(self.request.get('pageName'))
+        page=Page(name=name.lower().replace(" ",""),character=chara,title=name)
+        page.put()
+        self.redirect(self.request.path)
+        
+class ViewPage(webapp.RequestHandler):
+    def get(self,chara,page):
+        self.redirect('/')
+
+class DB_utils:
+    @staticmethod
+    def get_chara(chara_id):
+        return Character.gql("WHERE id = :1",chara_id).get()
 
 def main():
     application = webapp.WSGIApplication([('/', MainHandler),
         (r'/delete/(.*)',DeleteCharacter),
-        (r'/chara/(.*)',ViewCharacter)],
+        (r'/chara/(.*)',ViewCharacter),
+        (r'/chara/(.*)/(.*)',ViewPage)],
         debug=True)
     util.run_wsgi_app(application)
 
