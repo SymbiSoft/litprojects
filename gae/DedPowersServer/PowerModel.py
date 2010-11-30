@@ -1,4 +1,5 @@
 from google.appengine.ext import db
+import logging
 
 class ActionType(db.Model):
     symbol = db.StringProperty(required=True)
@@ -34,6 +35,14 @@ class Power(db.Model):
     is_utility = db.BooleanProperty()
     order = db.IntegerProperty()
     text = db.TextProperty()
+    
+class Content(db.Expando):
+    title = db.StringProperty(required=True)
+    template = db.StringProperty()
+    
+    def __init__(self, title, **kwds):
+        _title=kwds.pop('title').lower().replace(" ","-")
+        db.Expando.__init__(self,title=_title,**kwds)
     
 
 
