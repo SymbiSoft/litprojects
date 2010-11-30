@@ -18,6 +18,7 @@ import os,cgi,sys
 import pdb
 from google.appengine.ext import webapp
 from google.appengine.ext.webapp import util
+import logging
 
 from PowerModel import *
 
@@ -25,6 +26,7 @@ from google.appengine.ext.webapp import template
 
 class MainHandler(webapp.RequestHandler):
     def get(self):
+        logging.debug("main handler (index.html)")
         characters=Character.all().order("name")
         template_values={"characters":characters}
         path = os.path.join(os.path.dirname(__file__), 'template/index.html')
@@ -50,6 +52,7 @@ class DeleteCharacter(webapp.RequestHandler):
 
 class ViewCharacter(webapp.RequestHandler):
     def get(self,chara):
+        logging.debug("View character %s " % (chara))
         chara=DB_utils.get_chara(chara)
         path = os.path.join(os.path.dirname(__file__), 'template/view-character.html')
         self.response.out.write(template.render(path, {"chara":chara}))
@@ -63,18 +66,42 @@ class ViewCharacter(webapp.RequestHandler):
         
 class ViewPage(webapp.RequestHandler):
     def get(self,chara,page):
-        self.redirect('/')
+        logging.debug("View page %s %s" % (chara,page))
+        chara=DB_utils.get_chara(chara)
+        page=DB_utils.get_page(page)
+        path = os.path.join(os.path.dirname(__file__), 'template/view-page.html')
+        self.response.out.write(template.render(path, {"chara":chara,"page":page}))
 
 class DB_utils:
     @staticmethod
     def get_chara(chara_id):
         return Character.gql("WHERE id = :1",chara_id).get()
+    @staticmethod
+    def get_page(page):
+        return Page.gql("WHERE name = :1",page).get()
+
+class Test(webapp.RequestHandler):
+    def get(self):
+        home=Content(title="cCiica asfaDaf",template="view-page.html")
+        home.put()
+        chara=Content(title="sven-laargston",template="chara.html",chara_name="Sven Laargston",parent=home)
+        chara.put()
+        chara2=Content(title="sven-laarg2s2ton",template="chara.html",chara_name="Sv2e2n 2L2aargston",parent=home)
+        chara2.put()
+        logging.warn(chara.parent().title)
+        q = db.Query()
+        q.ancestor(home)
+        logging.warn(q.count())
+        for c in q.fetch(limit=5):
+            logging.warn(c.title)
 
 def main():
+    logging.getLogger().setLevel(logging.DEBUG)
     application = webapp.WSGIApplication([('/', MainHandler),
         (r'/delete/(.*)',DeleteCharacter),
-        (r'/chara/(.*)',ViewCharacter),
-        (r'/chara/(.*)/(.*)',ViewPage)],
+        (r'/chara/([^/]*)',ViewCharacter),
+        (r'/chara/([^/]*)/([^/]*)',ViewPage),
+        (r'/test',Test)],
         debug=True)
     util.run_wsgi_app(application)
 
