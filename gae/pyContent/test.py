@@ -30,10 +30,13 @@ class ContentModelTest(unittest.TestCase):
         
     def content_children_test(self):
         p=Content(name="parent")
+        p.put()
         c1=Content(name="children1",parent=p)
         c2=Content(name="children2",parent=p)
-        self.assertTrue(c1 in p.children)
-        self.assertTrue(c2 in p.children)
+        c1.put()
+        c2.put()
+        children=p.children
+        self.assertTrue(c1 in children and c2 in children)
         
     def handle_test(self):
         p=Content(name="parent")
